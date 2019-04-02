@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header msg="SOMNI.DEV"/>
+    <Sidebar v-bind:todos="todos"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header,
+    Sidebar
+  },
+  data() {
+    return {
+      todos: [
+        {
+          id: 1,
+          title: "Who?"
+        },
+        {
+          id: 2,
+          title: "What?"
+        },
+        {
+          id: 3,
+          title: "How?"
+        }
+      ]
+    }
   }
 }
 </script>
@@ -23,6 +43,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0px;
+}
+
+body {
+  margin: 0;
 }
 </style>
